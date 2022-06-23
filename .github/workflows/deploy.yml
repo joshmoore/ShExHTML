@@ -20,12 +20,14 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          touch .nojekyll
-          rm .gitignore
+          mkdir build
+          mv doc build/
+          mv node_modules build/
+          touch build/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: .
+          FOLDER: build
