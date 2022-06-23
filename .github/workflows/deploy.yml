@@ -23,6 +23,7 @@ jobs:
           mkdir build
           mv doc build/
           mv node_modules build/
+          mv shex-html.js build/
           touch build/.nojekyll
 
       - name: Deploy 🚀
